@@ -13,6 +13,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'listen'
   gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
 end
 
 group :development do
