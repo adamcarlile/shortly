@@ -22,6 +22,7 @@ RSpec.describe ShortsController, type: :controller do
     end
 
     it { expect(response.location).to eql(url) }
+    it { expect(response.code).to eql('301') }
 
   end
 

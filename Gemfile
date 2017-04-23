@@ -13,6 +13,10 @@ gem 'slim'
 gem 'simple_form'
 gem 'bulma_renderers', git: 'https://github.com/adamcarlile/bulma-renderers.git'
 
+group :production do
+  gem 'therubyracer'
+end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'listen'
