@@ -1,0 +1,10 @@
+= bulma_card do |card|
+  - card.header('Your Shortly URL')
+  - card.content do 
+    ul 
+      li 
+        strong Your URL: 
+        = resource.url.to_s
+      li 
+        strong Your Shortly: 
+        = request.protocol + request.host_with_port + resource.short_url

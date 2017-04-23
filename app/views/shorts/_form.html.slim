@@ -1,0 +1,4 @@
+= simple_form_for(resource, remote: true) do |f|
+  = f.input :url, label: false, placeholder: 'URL to Shorten'
+  br
+  = f.button :submit, 'Create Shortly', class: 'is-white is-outlined'

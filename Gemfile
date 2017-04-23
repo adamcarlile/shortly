@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'virtus'
 gem 'responders'
 gem 'slim'
+gem 'simple_form'
+gem 'bulma_renderers', git: 'https://github.com/adamcarlile/bulma-renderers.git'
 
 group :development, :test do
   gem 'pry-rails'

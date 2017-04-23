@@ -7,4 +7,11 @@ html
     = csrf_meta_tags
 
   body
-      = yield
+    section.section.hero.is-medium.is-primary.is-bold.is-fullheight
+      div.container
+        div.columns.hero-body
+          div.column.is-one-third.is-left
+            h1.title Shortly
+            h2.subtitle The, Url, Shortner!
+          div.column
+            = yield

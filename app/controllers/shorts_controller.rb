@@ -3,9 +3,17 @@ class ShortsController < ApplicationController
 
   respond_to :html, :json, :js
 
+  def new
+    @resource = Short.new
+  end
+
   def create
-    resource.save!
-    respond_with resource
+    if resource.valid?
+      resource.save! 
+      respond_with resource
+    else
+      render :new
+    end
   end
 
   private

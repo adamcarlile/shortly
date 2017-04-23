@@ -12,6 +12,8 @@ class Short
   end
   attribute :url, Attributes::URL
 
+  validates :url, presence: true
+
   delegate :store, to: :class
 
   def key
@@ -35,6 +37,7 @@ class Short
   end
 
   def save!
+    return false unless valid?
     store[key] = self
   end
 
