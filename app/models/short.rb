@@ -1,4 +1,5 @@
 class Short
+  include ActiveModel::Model
   include Virtus.model
   class << self
     def find(url)
@@ -15,6 +16,22 @@ class Short
 
   def key
     @key ||= SecureRandom.hex(3)
+  end
+  alias :id :key
+
+  def short_url
+    "/#{key}"
+  end
+
+  def persisted?
+    store.key?(key)
+  end
+
+  def as_json(*)
+    {
+      url: url.to_s,
+      short_url: short_url
+    }
   end
 
   def save!

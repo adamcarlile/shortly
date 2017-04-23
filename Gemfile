@@ -8,6 +8,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'virtus'
+gem 'responders'
+gem 'slim'
 
 group :development, :test do
   gem 'pry-rails'
