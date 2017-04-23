@@ -13,4 +13,16 @@ RSpec.describe ShortsController, type: :controller do
     end
   end
 
+  describe '#show' do
+    let(:url)   { Faker::Internet.url }
+    let(:short) { Short.new(url: url) }
+    before do 
+      short.save!
+      get :show, params: { id: short.id }
+    end
+
+    it { expect(response.location).to eql(url) }
+
+  end
+
 end

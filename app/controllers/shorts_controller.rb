@@ -7,6 +7,14 @@ class ShortsController < ApplicationController
     @resource = Short.new
   end
 
+  def show
+    if resource
+      redirect_to(resource.url.to_s, status: :moved_permanently)
+    else
+      head :not_found
+    end
+  end
+
   def create
     if resource.valid?
       resource.save! 
