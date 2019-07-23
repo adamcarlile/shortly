@@ -17,7 +17,7 @@ class ShortsController < ApplicationController
 
   def create
     if resource.valid?
-      resource.save! 
+      resource.save
       respond_with resource
     else
       render :new
@@ -26,13 +26,13 @@ class ShortsController < ApplicationController
 
   private
 
-    def resource
-      @resource ||= params[:id] ? Short.find(params[:id]) : Short.new(permitted_params)
-    end
-    helper_method :resource
+  def resource
+    @resource ||= params[:id] ? Short.find(params[:id]) : Short.new(permitted_params)
+  end
+  helper_method :resource
 
-    def permitted_params
-      params.require(:short).permit(:url).to_h
-    end
+  def permitted_params
+    params.require(:short).permit(:url).to_h
+  end
 
 end

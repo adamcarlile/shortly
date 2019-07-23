@@ -17,7 +17,7 @@ RSpec.describe ShortsController, type: :controller do
     let(:url)   { Faker::Internet.url }
     let(:short) { Short.new(url: url) }
     before do 
-      short.save!
+      short.save
       get :show, params: { id: short.id }
     end
 

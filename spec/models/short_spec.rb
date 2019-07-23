@@ -9,11 +9,10 @@ RSpec.describe Short, type: :model do
 
     it { expect(subject.url.to_s).to eql(url) }
     it { expect(subject.url).to be_instance_of(URL) }
-    it { expect(subject.key).to be_present }
   end
 
   describe 'Persistance' do
-    before { short.save! }
+    before { short.save }
 
     it 'should be findable' do
       expect(Short.find(short.key)).to eql(short)
