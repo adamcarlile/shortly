@@ -1,10 +1,4 @@
 class MemoryStore
-  class << self
-    def store
-      @store ||= Hash.new
-    end
-  end
-  delegate :store, to: :class
 
   def find(id)
     store[id]
@@ -24,6 +18,10 @@ class MemoryStore
       id = provisional_id unless store.key?(provisional_id)
     end
     id
+  end
+
+  def store
+    @store ||= Hash.new
   end
 
 end
